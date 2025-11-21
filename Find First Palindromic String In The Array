@@ -1,0 +1,18 @@
+char* firstPalindrome(char** words, int wordsSize) {
+    for (int i = 0; i < wordsSize; i++) {
+        char *s = words[i];
+        int l = 0;
+        int r = strlen(s) - 1;
+        int ok = 1;
+        while (l < r) {
+            if (s[l] != s[r]) {
+                ok = 0;
+                break;
+            }
+            l++;
+            r--;
+        }
+        if (ok) return s;
+    }
+    return "";
+}
